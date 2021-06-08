@@ -1,3 +1,17 @@
 import mongoose from "mongoose";
 
-export const Project = mongoose.model("Project", { name: String });
+
+const projectSchema = mongoose.Schema({
+    name: String
+})
+
+const userSchema = mongoose.Schema({
+    firstName: String,
+    lastName: String,
+    email: String,
+    description: String
+})
+
+
+export const Project = mongoose.model("Project", projectSchema);
+export const User = mongoose.model("User", userSchema)
