@@ -5,6 +5,11 @@ export const typeDefs = gql`
     hello: String!
     projects: [Project!]!
     users: [User!]!
+    login(email: String!,password: String!): Login!
+  }
+
+  type Login {
+    succes: String!
   }
 
   type Project {
@@ -17,11 +22,12 @@ export const typeDefs = gql`
     firstName: String!
     lastName: String!
     email: String!
+    password: String!
   }
 
   type Mutation {
     createProject(name: String!): Project!
-    createUser(firstName: String!, lastName: String!, email: String!): User!
+    createUser(firstName: String!, lastName: String!, email: String!, password: String!): User!
 
 
   }

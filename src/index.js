@@ -8,6 +8,7 @@ import dbConfig from './dbConfig'
 
 const startServer = async () => {
   const app = express();
+  app.use(express.json())
 
   const server = new ApolloServer({
     typeDefs,
